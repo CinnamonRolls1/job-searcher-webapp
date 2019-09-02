@@ -1,5 +1,4 @@
 # Job Search Webapp
-WTA project
 
 ### Documentation (Due on 8th)
 #### Reference issue #1 in your commits
