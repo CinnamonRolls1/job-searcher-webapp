@@ -1,2 +1,2 @@
-# job-searcher
+# Job Search Webapp
 WTA project
