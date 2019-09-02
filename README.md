@@ -1,7 +1,7 @@
 # Job Search Webapp
 WTA project
 
-### Documentation (Due on 8th)
+### Documentation (Due on 8th), reference issue #1 in your commits
 Fill details of your approach below:
 
 - ### Safeer
