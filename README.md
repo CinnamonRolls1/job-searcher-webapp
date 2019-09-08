@@ -12,7 +12,7 @@
 
 Fill details of your approach below (reference #1):
 
-- ### Safeer [ML & DMBS]
+- ### Safeer [ML & DBMS]
 [text here]
 - ### Kishan [DBMS]
 [text here]
