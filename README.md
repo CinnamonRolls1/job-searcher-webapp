@@ -3,12 +3,16 @@
 ### Documentation 
 #### Frameworks selected:
 - Backend
+
 Express
 - Frontend
-View
+
+Vue.js
 - Database
+
 SQL
 - Scraping
+
 BeautifulSoup
 #### Reference issue #1 in your commits
 Fill details of your approach below:
