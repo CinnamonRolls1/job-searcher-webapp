@@ -1,6 +1,6 @@
 # Job Search Webapp
 
-### Documentation (Due on 8th)
+### Documentation 
 #### Reference issue #1 in your commits
 Fill details of your approach below:
 
