@@ -1,7 +1,7 @@
 # Job Search Webapp
 
-### Documentation 
-#### Frameworks selected:
+## Documentation 
+### Frameworks selected:
 **Backend:** Express
 
 **Frontend:** Vue.js
@@ -10,14 +10,13 @@
 
 **Scraping:** BeautifulSoup
 
-#### Reference issue #1 in your commits
-Fill details of your approach below:
+Fill details of your approach below (reference #1):
 
-- ### Safeer
+- ### Safeer [ML & DMBS]
 [text here]
-- ### Kishan
+- ### Kishan [DBMS]
 [text here]
-- ### Praveen
+- ### Praveen [Frontend, web-framework]
 [text here]
-- ### Chin
+- ### Chin [Web-scraping]
 [text here]
