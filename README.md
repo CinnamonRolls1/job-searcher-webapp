@@ -1,6 +1,15 @@
 # Job Search Webapp
 
 ### Documentation 
+#### Frameworks selected:
+- Backend
+Express
+- Frontend
+View
+- Database
+SQL
+- Scraping
+BeautifulSoup
 #### Reference issue #1 in your commits
 Fill details of your approach below:
 
