@@ -2,18 +2,11 @@
 
 ### Documentation 
 #### Frameworks selected:
-- Backend
+*Backend:* Express
+*Frontend:* Vue.js
+*Database:* SQL
+*Scraping:* BeautifulSoup
 
-Express
-- Frontend
-
-Vue.js
-- Database
-
-SQL
-- Scraping
-
-BeautifulSoup
 #### Reference issue #1 in your commits
 Fill details of your approach below:
 
