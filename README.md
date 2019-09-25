@@ -17,6 +17,6 @@ Fill details of your approach below (reference #1):
 - ### Kishan [DBMS]
 [text here]
 - ### Praveen [Frontend, web-framework]
-[text here]
+Framework for Frontend: Ruby on Rails
 - ### Chin [Web-scraping]
 [text here]
