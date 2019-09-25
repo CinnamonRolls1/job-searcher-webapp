@@ -4,7 +4,7 @@
 ### Frameworks selected:
 **Backend:** Express
 
-**Frontend:** Vue.js
+**Frontend:** Ruby on Rails
 
 **Database:** SQL
 
