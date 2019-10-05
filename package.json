@@ -1,0 +1,24 @@
+{
+  "name": "job-searcher-webapp",
+  "version": "1.0.0",
+  "description": "Simple Job Searching website",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CinnamonRolls1/job-searcher-webapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CinnamonRolls1/job-searcher-webapp/issues"
+  },
+  "homepage": "https://github.com/CinnamonRolls1/job-searcher-webapp#readme"
+}
