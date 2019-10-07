@@ -13,7 +13,8 @@ html(lang='en', dir='ltr')
       }
       h1 {
       text-align:center;
-      letter-spacing: 3px;
+      color: #0B5345;
+      letter-spacing: 6px;
       font-size:4.6em;
       font-family: 'Poiret One', cursive;
       }
@@ -21,37 +22,69 @@ html(lang='en', dir='ltr')
       font-family: 'Sacramento', cursive;
       font-size: 2.65em;
       margin-top:-20px;
+      color: #4D5656;
       margin-left:70%;
       }
       body {
       background-color:#B2F8F1;
       }
       .form {
-      margin-top:25%;;
+      margin-top:10%;;
       text-align:center;
+      width:100%;
       }
       .form h2 {
       font-family: 'Quicksand', sans-serif;
       font-size:2.3em;
+      letter-spacing:0px;
+      color:#7D3C98;
+      }
+      .field {
+      margin-top:40px;
+      height:30px;
+      padding:10px;
+      font-size:20px;
+      border:none;
+      border-radius:10px;
       }
       .position {
+      height:9px;
+      width:45%;
       }
       .location {
+      height:9px;
+      width:25%;
       }
       .search-buttn {
-      padding:5px;
-      font-size:2em;
+      height:30px;
+      width:15%;
+      background:#2E86C1;
+      font-size:20px;
+      border:none;
+      color:#fff;
+      border-radius:10px;
       }
       .search-buttn:hover {
-      background-color:#E5E7E9;
-      curser:hand;
+      background-color:#52BE80;
+      curser:pointer;
+      }
+      span {
+      color:#CB4335;
+      }
+      #love {
+      letter-spacing: 14px;
+      margin-left: 20px;
       }
   body
     h1 Job searcher
     p#cap a new way...
     form.form(action='index.html', method='post')
-      h2 Search Jobs
+      h2
+        | find a 
+        span Job
+        |  you 
+        span#love love
       .box
-        input.position(type='text', placeholder='position')
-        input.location(type='text', placeholder='location')
+        input.field.position(type='text', placeholder='position')
+        input.field.location(type='text', placeholder='location')
         button.search-buttn(type='button', name='button') Search
