@@ -12,6 +12,9 @@ app.set('view engine','pug');
 app.get('/', function(req,res){
   res.render('home');
 });
+app.get('/results', function(req,res) {
+  res.render('results');
+});
 
 //Start Server
 const PORT= 3000;
