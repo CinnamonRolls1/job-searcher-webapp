@@ -1,7 +1,57 @@
 doctype html
-html
+html(lang='en', dir='ltr')
   head
-    title Job Search
-  
+    meta(charset='utf-8')
+    title Job Searcher
+    link(href='https://fonts.googleapis.com/css?family=Amiri|Poiret+One&display=swap', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Sacramento&display=swap', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Quicksand&display=swap', rel='stylesheet')
+    style.
+      * {
+      margin:0;
+      padding:0;
+      }
+      h1 {
+      text-align:center;
+      letter-spacing: 3px;
+      font-size:4.6em;
+      font-family: 'Poiret One', cursive;
+      }
+      #cap {
+      font-family: 'Sacramento', cursive;
+      font-size: 2.65em;
+      margin-top:-20px;
+      margin-left:70%;
+      }
+      body {
+      background-color:#B2F8F1;
+      }
+      .form {
+      margin-top:25%;;
+      text-align:center;
+      }
+      .form h2 {
+      font-family: 'Quicksand', sans-serif;
+      font-size:2.3em;
+      }
+      .position {
+      }
+      .location {
+      }
+      .search-buttn {
+      padding:5px;
+      font-size:2em;
+      }
+      .search-buttn:hover {
+      background-color:#E5E7E9;
+      curser:hand;
+      }
   body
-    h1 Job Search 
+    h1 Job searcher
+    p#cap a new way...
+    form.form(action='index.html', method='post')
+      h2 Search Jobs
+      .box
+        input.position(type='text', placeholder='position')
+        input.location(type='text', placeholder='location')
+        button.search-buttn(type='button', name='button') Search
