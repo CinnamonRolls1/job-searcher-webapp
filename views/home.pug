@@ -78,13 +78,13 @@ html(lang='en', dir='ltr')
   body
     h1 Job searcher
     p#cap a new way...
-    form.form(action='index.html', method='post')
+    form.form(action='/', method='POST')
       h2
         | find a 
         span Job
         |  you 
         span#love love
       .box
-        input.field.position(type='text', placeholder='role')
-        input.field.location(type='text', placeholder='location')
-        button.search-buttn(type='button', name='button') Search
+        input.field.position(type='text', placeholder='role', name='role')
+        input.field.location(type='text', placeholder='location',name='location')
+        button.search-buttn(type='submit', name='search') Search
