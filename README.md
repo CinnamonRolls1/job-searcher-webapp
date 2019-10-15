@@ -19,4 +19,4 @@ Fill details of your approach below (reference #1):
 - ### Praveen [Frontend, web-framework]
 Framework for Frontend: Ruby on Rails
 - ### Chin [Web-scraping]
-[text here]
+Adopted [Scrapy](https://docs.scrapy.org/en/latest/) (a python web-scraping module).
