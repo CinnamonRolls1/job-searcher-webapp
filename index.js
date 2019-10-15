@@ -47,24 +47,27 @@ app.post('/', function(req, res){
   res.redirect('/results');
 })
 
-Job.find({}, function(err,docs){
-  console.log(docs);
-});
+
 
 app.get('/results', function(req,res) {
-  var jobs =  [
-    { title : 'Software engineer', desc : 'random', salary : 10000},
-    { title : 'Back end', desc : 'random', salary : 10000},
-    { title : 'Cloud Reliabilty', desc : 'random', salary : 10000},
-    { title : 'Compiler Research', desc : 'random', salary : 10000},
-    { title : 'Full Stack', desc : 'random', salary : 10000},
-    { title : 'Content Creator', desc : 'random', salary : 10000},
-    { title : 'Server Technology', desc : 'random', salary : 10000},
-    { title : 'Manager', desc : 'random', salary : 10000},
-    { title : 'Project Head', desc : 'random', salary : 10000}
-  ]
+  // var jobs =  [
+  //   { title : 'Software engineer', desc : 'random', salary : 10000},
+  //   { title : 'Back end', desc : 'random', salary : 10000},
+  //   { title : 'Cloud Reliabilty', desc : 'random', salary : 10000},
+  //   { title : 'Compiler Research', desc : 'random', salary : 10000},
+  //   { title : 'Full Stack', desc : 'random', salary : 10000},
+  //   { title : 'Content Creator', desc : 'random', salary : 10000},
+  //   { title : 'Server Technology', desc : 'random', salary : 10000},
+  //   { title : 'Manager', desc : 'random', salary : 10000},
+  //   { title : 'Project Head', desc : 'random', salary : 10000}
+  // ]
 
-  res.render('results',{job_desc : jobs});
+
+  Job.find({},function(err,docs){
+    res.render('results',{job_desc : docs});
+  })
+
+
 });
 
 //Start Server

@@ -6,4 +6,4 @@ let jobSchema = new mongoose.Schema({
   Salary : {type: Number, required:true}
 })
 
-let jobs = module.exports = mongoose.model('Jobs',jobSchema);
+let jobs = module.exports = mongoose.model('Jobs',jobSchema,'Jobs');
