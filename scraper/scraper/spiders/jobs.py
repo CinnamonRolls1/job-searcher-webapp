@@ -23,7 +23,7 @@ class JobsSpider(scrapy.Spider):
 				'COMPANY' : job.xpath("normalize-space(.//span[@class='company']/text())").extract_first(),
 				'LOCATION' : job.xpath("normalize-space(.//div[contains(@class,'location')])").extract_first(),
 				'SALARY' : job.xpath("normalize-space(.//span[contains(@class, 'salary')])").extract_first(),
-				'AGE OF POSTING' : job.xpath("normalize-space(.//span[@class='date '])").extract_first()
+				# 'AGE OF POSTING' : job.xpath("normalize-space(.//span[@class='date '])").extract_first()
 			}
 
 		next_page = response.xpath("//div[@class='pagination']/a[position()=last()]/@href").extract_first()
