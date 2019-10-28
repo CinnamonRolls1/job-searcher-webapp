@@ -1,7 +1,10 @@
 import scrapy
 
+# running: scrapy crawl jobs -o data.csv
+
 class JobsSpider(scrapy.Spider):
 	name = 'jobs'	
+	
 	start_urls = [
 		'https://www.indeed.co.in/jobs-in-Bangalore,-Karnataka'
 	]
@@ -18,9 +21,15 @@ class JobsSpider(scrapy.Spider):
 
 	def parse(self, response):
 		for job in response.xpath("//div[contains(@class,'jobsearch-SerpJobCard') and contains(@class,'unifiedRow')]"):
+			
+			company=job.xpath("normalize-space(.//span[@class='company']/text())") 
+			# print("company:", company.extract_first())
+			if company.extract_first() == '':
+				company=job.xpath("normalize-space(.//a[@class='turnstileLink']/text())")
+
 			yield {
 				'TITLE' : job.xpath("normalize-space(.//div[@class='title']/a/text())").extract_first(),
-				'COMPANY' : job.xpath("normalize-space(.//span[@class='company']/text())").extract_first(),
+				'COMPANY' : company.extract_first(),
 				'LOCATION' : job.xpath("normalize-space(.//div[contains(@class,'location')])").extract_first(),
 				'SALARY' : job.xpath("normalize-space(.//span[contains(@class, 'salary')])").extract_first(),
 				# 'AGE OF POSTING' : job.xpath("normalize-space(.//span[@class='date '])").extract_first()
