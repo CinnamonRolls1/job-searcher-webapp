@@ -1,5 +1,6 @@
 import scrapy
 import re
+import unidecode
 
 # running: scrapy crawl indeed -o indeed_data.json
 
@@ -46,13 +47,23 @@ class IndeedSpider(scrapy.Spider):
 					# print("\nMonthly salary detected!")
 					salary=12*salary
 
+			##### DESCRIPTION
+			desc_data=job.xpath(".//div[contains(@class,'summary')]/ul/li")
+			# print("----------------------")
+			# print(desc_data)
+			# print(len(desc_data))
+			desc=""
+			for point in desc_data:
+				desc+=(" "+point.xpath("normalize-space(.//text())").extract_first())
+			# print(desc)
+
 
 			yield {
 				'TITLE' : job.xpath("normalize-space(.//div[@class='title']/a/text())").extract_first(),
 				'COMPANY' : company.extract_first(),
 				'LOCATION' : job.xpath("normalize-space(.//div[contains(@class,'location')])").extract_first(),
 				'SALARY' : salary,
-				# 'AGE OF POSTING' : job.xpath("normalize-space(.//span[@class='date '])").extract_first()
+				'DESCRIPTION' : unidecode.unidecode('u'+desc)
 			}
 
 		next_page = response.xpath("//div[@class='pagination']/a[position()=last()]/@href").extract_first()
@@ -94,11 +105,15 @@ class TJSpider(scrapy.Spider):
 						salary=float(salary)*100000
 					# print(salary)
 
+				# print('here')
+				# print(job.xpath("normalize-space(.//ul[contains(@class,'list-job-dtl')]/li/text())").extract_first())
+
 				yield {
 					'TITLE' : job.xpath("normalize-space(.//header[contains(@class,'clearfix')]/h2/a/text())").extract_first(),
 					'COMPANY' : job.xpath("normalize-space(.//header[contains(@class,'clearfix')]/h3/text())").extract_first(),
 					'LOCATION' : job.xpath("normalize-space(.//ul[contains(@class,'top-jd-dtl')]/li[position()=last()]/span/text())").extract_first(),
 					'SALARY' : salary,
+					# 'DESCRIPTION': unidecode.unidecode()
 					# 'AGE OF POSTING' : job.xpath("normalize-space(.//span[@class='date '])").extract_first()
 				}
 				
