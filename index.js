@@ -23,6 +23,7 @@ app.post('/', function(req, res){
   var location = req.body.location;
   console.log(role,location);
   res.redirect('/results');
+
 })
 
 

@@ -68,21 +68,45 @@ html(lang='en', dir='ltr')
       .list li:hover {
       background-color: #FDEDEC;
       }
+      ul.search {
+      list-style:none;
+      height:10%;
+      padding:0px;
+      margin-left:0%;
+      }
+      ul li.search {
+      font-size:1.4em;
+      }
+      ul li ul li {
+      display:none;
+      list-style:none;
+      height:10%;
+      padding:0px;
+      margin-left:0%;
+      }
+      ul li.search:hover {
+      background-color:white;
+      }
+      ul li.search:hover ul li.in {
+      display:block;
+      margin-left:5%;
+      }
   body
     .menu
       ul.list
-        li.men Menu
+        li.men Home
         li.men Sponsered
         li.men About
         li.men Meet the Team
     .results
       h1 Jobs based on your search
+      h1 #{pos} #{loc}
       .job
-        h2 Software Engineer
-        h3 Description:
-        a(href='#') link
-        ul
+        ul.search
           each job, i in job_desc
-            li #{job.title}
+            li.search #{job.title}
+              ul.in
+                li.in #{"Job Description: "}#{job.desc} 
+                li.in #{"Salary: "}#{job.salary}
           
       
