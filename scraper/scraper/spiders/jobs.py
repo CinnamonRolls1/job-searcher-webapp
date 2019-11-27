@@ -105,15 +105,15 @@ class TJSpider(scrapy.Spider):
 						salary=float(salary)*100000
 					# print(salary)
 
-				# print('here')
-				# print(job.xpath("normalize-space(.//ul[contains(@class,'list-job-dtl')]/li/text())").extract_first())
-
+				##### DESCRIPTION
+				desc=re.sub('(Job Description:)|(More Details)', '', job.xpath("normalize-space(.//ul[contains(@class,'list-job-dtl')]/li)").extract_first())
+				
 				yield {
 					'TITLE' : job.xpath("normalize-space(.//header[contains(@class,'clearfix')]/h2/a/text())").extract_first(),
 					'COMPANY' : job.xpath("normalize-space(.//header[contains(@class,'clearfix')]/h3/text())").extract_first(),
 					'LOCATION' : job.xpath("normalize-space(.//ul[contains(@class,'top-jd-dtl')]/li[position()=last()]/span/text())").extract_first(),
 					'SALARY' : salary,
-					# 'DESCRIPTION': unidecode.unidecode()
+					'DESCRIPTION': unidecode.unidecode(desc)
 					# 'AGE OF POSTING' : job.xpath("normalize-space(.//span[@class='date '])").extract_first()
 				}
 				
