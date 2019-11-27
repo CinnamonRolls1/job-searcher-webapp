@@ -34,7 +34,9 @@ sentences = list(map(lambda x: x.split(" "),sentences))
 sentences = remove_stopwords(sentences)
 
 
-model = Word2Vec(sentences,size=2)
+model = Word2Vec(sentences)
 
 
 X=model[model.wv.vocab]
+
+print(model.n_similarity(['intern','software'],model.wv.vocab))
