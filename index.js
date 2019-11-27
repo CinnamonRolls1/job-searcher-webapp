@@ -46,17 +46,23 @@ app.post('/', function(req, res){
   var salary = req.body.salary;
   console.log(role,location);
   res.redirect('/results');
-
+  
   //writing query to json
-  var obj = {
-    role: [role],
-    location: [location],
-    salary: [salary]
-  };
-
-  var json = JSON.stringify(obj);
+  
+  // var obj = {
+    //   role: role,
+    //   location: location,
+    //   salary: salary
+    // };
   var fs = require('fs');
-  fs.writeFile('query.json', json, 'utf8', callback);
+    
+  let rawdata = fs.readFileSync('query.json');
+  let obj = JSON.parse(rawdata);
+  obj.role=role;
+  obj.location=location;
+  obj.salary=salary;
+  var json = JSON.stringify(obj);
+  fs.writeFileSync('query.json', json);
 
 
 })
@@ -104,7 +110,7 @@ app.get('/results', function(req,res) {
 
 
   Job.find({},function(err,docs){
-    //console.log(docs.slice(1,3));
+    console.log(docs.slice(1,3));
     res.render('results',{job_desc : docs.slice(0,10)});
   });
 

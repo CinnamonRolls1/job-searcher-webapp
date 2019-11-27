@@ -10,4 +10,4 @@ let jobSchema = new mongoose.Schema({
   cluster : {type : Number, required: false},
 });
 
-let jobs = module.exports = mongoose.model('samples',jobSchema,'samples');
+let jobs = module.exports = mongoose.model('indeed_datas',jobSchema,'indeed_datas');
