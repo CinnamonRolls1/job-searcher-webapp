@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 scraper/scraper/spiders/__pycache__/jobs.cpython-37.pyc
 /scraper/indeed.json
 /scraper/tj_data.json
+=======
+node_modules
+>>>>>>> gitignore

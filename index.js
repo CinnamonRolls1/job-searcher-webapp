@@ -65,8 +65,9 @@ app.get('/results', function(req,res) {
 
 
   Job.find({},function(err,docs){
-    res.render('results',{job_desc : docs});
-  })
+    //console.log(docs.slice(1,3));
+    res.render('results',{job_desc : docs.slice(0,10)});
+  });
 
 
 });
