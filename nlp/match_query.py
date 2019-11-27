@@ -4,7 +4,8 @@ import pandas as pd
 Searcher = TextMatcher()
 Searcher.load('indeed_data.bin')
 print(list(Searcher.model.wv.vocab))
-sentences = pd.read_csv('../datasets/indeed_data.csv').iloc[:,0].values
+df = pd.read_csv('../datasets/indeed_data.csv')
+sentences = df.iloc[:,0].values
 #print(sentences)
 new_sentences = []
 for i in sentences:
@@ -17,4 +18,6 @@ sentences = list(map(lambda x : x.lower(),sentences))
 sentences = list(map(lambda x: x.split(" "),sentences))
 
 sentences = Searcher.remove_stopwords(sentences)
-Searcher.get_results(['administrator','controller','project'],sentences)
+index=Searcher.get_results(['administrator','controller','project'],sentences)
+
+pd.DataFrame(df.iloc[index]).T.to_json('../result.json')

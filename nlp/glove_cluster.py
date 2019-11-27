@@ -49,13 +49,25 @@ class TextMatcher:
         self.model=Word2Vec.load(filename)
 
     def get_results(self,sentence,sentences,threshold=10):
-
-        for i in sentences :
-            #print(i,sentence)
+        l_sim = 0
+        l_i=0
+        for i in range(len(sentences)) :
+            print(sentences[i],sentence)
             try:
-                sim=self.model.n_similarity(sentence,i)
+
+                sim=self.model.n_similarity(sentences[i],sentence)
+                print(sim)
+
+                if l_sim <sim :
+                    l_sim = sim
+                    l_i = i
+
             except:
                 continue
+
+        print("largst_similarity",l_sim)
+
+        return l_i
 
 
 
