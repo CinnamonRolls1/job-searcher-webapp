@@ -7,6 +7,7 @@ html(lang='en', dir='ltr')
     link(href='https://fonts.googleapis.com/css?family=Inconsolata&display=swap', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Varela+Round&display=swap', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Baskervville&display=swap' rel='stylesheet')
+    script(type='text/javascript', src='https://platform.linkedin.com/badges/js/profile.js', async='', defer='')
     style.
       * {
       margin:0;
@@ -85,12 +86,12 @@ html(lang='en', dir='ltr')
       }
       h3 {
       font-family: 'Inconsolata', monospace;
-      margin-left:40%;
+      margin-left:10%;
       }
       p {
         font-family: 'Baskerville', serif;
         font-weight:100;
-        margin-left:42%;
+        margin-left:12%;
         margin-top:0.5%;
         font-size:1.4em;
       }
@@ -118,6 +119,19 @@ html(lang='en', dir='ltr')
       .names {
         margin-top:1.6%;
       }
+      .LI-profile-badge {
+        
+      }
+      .people {
+        float:left;
+        margin-left:2.5%;
+        margin-right:2.5%;
+        margin-bottom:5%;
+      }
+      .role {
+        position:relative;
+        
+      }
     script.
       function display() {
       var x = documnet.getElementByID("inn");
@@ -141,7 +155,7 @@ html(lang='en', dir='ltr')
           a(href='/about') About
         li.men
           a(href='/team') Meet the Team
-    .team
+    //-.team
       h1 Our Team
       div.names
         h2 Chinmayan pradeep
@@ -159,6 +173,38 @@ html(lang='en', dir='ltr')
         h2 Safeer ahmed
         h3 Role:
         p ghdufygdslckcaiuh
+        //
+    .people
+      .LI-profile-badge(data-version='v1', data-size='medium', data-locale='en_US', data-type='vertical', data-theme='light', data-vanity='kainsprav')
+        a.LI-simple-link(href='https://in.linkedin.com/in/kainsprav?trk=profile-badge') Kains Praveen
+      .role 
+        h3 Chinmayan
+        h3 Role:
+        p aslhfkabfiafhioauhdi
+    .people
+      .LI-profile-badge(data-version='v1', data-size='medium', data-locale='en_US', data-type='vertical', data-theme='light', data-vanity='kainsprav')
+        a.LI-simple-link(href='https://in.linkedin.com/in/kainsprav?trk=profile-badge') Kains Praveen
+      .role
+        h3 Kains Praveen
+        h3 Role:
+        p aslhfkabfiafhioauhdi
+    .people
+      .LI-profile-badge(data-version='v1', data-size='medium', data-locale='en_US', data-type='vertical', data-theme='light', data-vanity='kainsprav')
+        a.LI-simple-link(href='https://in.linkedin.com/in/kainsprav?trk=profile-badge') Kains Praveen
+      .role
+        h3 Kishan Rakesh
+        h3 Role:
+        p aslhfkabfiafhioauhdi
+    .people
+      .LI-profile-badge(data-version='v1', data-size='medium', data-locale='en_US', data-type='vertical', data-theme='light', data-vanity='kainsprav')
+        a.LI-simple-link(href='https://in.linkedin.com/in/kainsprav?trk=profile-badge') Kains Praveen
+      .role
+      h3 Safeer Ahmed 
+        h3 Role:
+        p aslhfkabfiafhioauhdi
+
+    
+    
           
           
 
