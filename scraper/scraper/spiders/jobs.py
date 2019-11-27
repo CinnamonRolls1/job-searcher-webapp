@@ -113,7 +113,8 @@ class TJSpider(scrapy.Spider):
 					'COMPANY' : job.xpath("normalize-space(.//header[contains(@class,'clearfix')]/h3/text())").extract_first(),
 					'LOCATION' : job.xpath("normalize-space(.//ul[contains(@class,'top-jd-dtl')]/li[position()=last()]/span/text())").extract_first(),
 					'SALARY' : salary,
-					'DESCRIPTION': unidecode.unidecode(desc)
+					'DESCRIPTION': unidecode.unidecode(desc),
+					'LINK': job.xpath(".//header[contains(@class,'clearfix')]/h2/a/@href").extract_first()
 					# 'AGE OF POSTING' : job.xpath("normalize-space(.//span[@class='date '])").extract_first()
 				}
 				
