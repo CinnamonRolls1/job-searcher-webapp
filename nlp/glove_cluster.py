@@ -48,11 +48,14 @@ class TextMatcher:
     def load(self,filename) :
         self.model=Word2Vec.load(filename)
 
-    def get_results(self,sentence,sentences):
+    def get_results(self,sentence,sentences,threshold=10):
 
         for i in sentences :
-            print(i,sentence)
-            print(self.model.n_similarity(sentence,i))
+            #print(i,sentence)
+            try:
+                sim=self.model.n_similarity(sentence,i)
+            except:
+                continue
 
 
 
