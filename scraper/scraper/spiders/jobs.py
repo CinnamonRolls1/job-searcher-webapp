@@ -7,14 +7,24 @@ import unidecode
 class IndeedSpider(scrapy.Spider):
 	name = 'indeed'	
 	
-	start_urls = [
-		'https://www.indeed.co.in/jobs-in-Bangalore,-Karnataka'
-	]
-	
 	# def start_requests(self):
 		
-		# for url in start_urls:
+	start_urls = [
+		'https://www.indeed.co.in/jobs-in-Bangalore,-Karnataka',
+		'https://www.indeed.co.in/jobs?q=&l=Mumbai%2C+Maharashtra',
+		'https://www.indeed.co.in/jobs?q=&l=Suratkal%2C+Karnataka',
+		'https://www.indeed.co.in/jobs?q=&l=Delhi',
+		'https://www.indeed.co.in/jobs?q=&l=Trivandrum%2C+Kerala',
+		'https://www.indeed.co.in/jobs?q=&l=Chennai%2C+Tamil+Nadu',
+		'https://www.indeed.co.in/jobs?q=&l=Pune%2C+Maharashtra',
+		'https://www.indeed.co.in/jobs?q=&l=Mangalore%2C+Karnataka',
+		'https://www.indeed.co.in/jobs?q=&l=Manipal%2C+Karnataka',
+		'https://www.indeed.co.in/jobs?q=&l=Bekal%2C+Kerala',
+		'https://www.indeed.co.in/jobs?q=&l=Goa'
+	]
 
+		# for url in start_urls:
+			# yield scrapy.Request(url=url, callback=self.parse)
 		# 	next_page = response.xpath("//span[@class='np']/../../@href").extract_first()
 		# 	if next_page is not None:
 		# 		next_page_link = response.urljoin(next_page)
@@ -86,7 +96,12 @@ class TJSpider(scrapy.Spider):
 	name = 'tj'	
 	
 	start_urls = [
-		'https://www.timesjobs.com/candidate/job-search.html?from=submit&searchType=personalizedSearch&txtLocation=Bengaluru/%20Bangalore&luceneResultSize=25&postWeek=60&pDate=Y&sequence=1&startPage=1'
+		#'https://www.timesjobs.com/candidate/job-search.html?from=submit&searchType=personalizedSearch&txtLocation=Bengaluru/%20Bangalore&luceneResultSize=25&postWeek=60&pDate=Y&sequence=1&startPage=1',
+		'https://www.timesjobs.com/candidate/job-search.html?from=submit&searchType=personalizedSearch&txtLocation=Mangalore&luceneResultSize=25&postWeek=60&pDate=Y&sequence=1&startPage=1',
+		'https://www.timesjobs.com/candidate/job-search.html?from=submit&searchType=personalizedSearch&txtLocation=Goa&luceneResultSize=25&postWeek=60&pDate=Y&sequence=1&startPage=1',
+		'https://www.timesjobs.com/candidate/job-search.html?from=submit&searchType=personalizedSearch&txtLocation=Kerala&luceneResultSize=25&postWeek=60&pDate=Y&sequence=1&startPage=1',
+		'https://www.timesjobs.com/candidate/job-search.html?from=submit&searchType=personalizedSearch&txtLocation=Delhi&luceneResultSize=25&postWeek=60&pDate=Y&sequence=1&startPage=1'
+
 	]				
 
 
