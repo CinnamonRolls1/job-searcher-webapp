@@ -135,11 +135,11 @@ html(lang='en', dir='ltr')
       h1 #{pos} #{loc}
       each job, i in job_desc
         .job
-          h2 #{job.TITLE}
-          h2 #{job.COMPANY}
+          h2 #{job.TITLE.value}
+          h2 #{job.COMPANY.value}
           h3 #{"Description:"}
           p #{job.desc}
-          a(href=jobs.LINK) LINK
+          a(href=job.LINK.value) Link
           
           
           
