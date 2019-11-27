@@ -63,10 +63,11 @@ class cluster:
 
 
 def main():
-    df = pd.read_json("../scraper/scraper/indeed_data.json",orient='records')
+    df = pd.read_json("../datasets/indeed_data.json",orient='records')
     obj=cluster()
     #print(df[['SALARY','LOCATION']])
-    #print(obj.data_frame)
+    print(df)
+    print(pd.DataFrame(df.iloc[:,0]))
     obj.build(df)
     #obj.kmeans()
 
