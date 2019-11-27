@@ -62,7 +62,7 @@ app.post('/', function(req, res){
 })
 
 
-app.get('/results', function(req,res) {
+/*app.get('/results', function(req,res) {
   var jobs = [
     { title : 'Software engineer', desc : 'random', salary : 10000},
        { title : 'Back end', desc : 'random', salary : 10000},
@@ -75,7 +75,7 @@ app.get('/results', function(req,res) {
        { title : 'Project Head', desc : 'random', salary : 10000}
   ]
   res.render('results', {job_desc: jobs});
-});
+});*/
 
 app.get('/sponsered', function(req,res) {
   res.render('sponsered');
@@ -89,7 +89,7 @@ app.get('/team', function(req, res) {
 
 
 
-/*app.get('/results', function(req,res) {
+app.get('/results', function(req,res) {
   // var jobs =  [
   //   { title : 'Software engineer', desc : 'random', salary : 10000},
   //   { title : 'Back end', desc : 'random', salary : 10000},
@@ -109,7 +109,7 @@ app.get('/team', function(req, res) {
   });
 
 
-});*/
+});
 
 //Start Server
 const PORT= 8000;
