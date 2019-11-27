@@ -63,6 +63,11 @@ app.post('/', function(req, res){
   obj.salary=salary;
   var json = JSON.stringify(obj);
   fs.writeFileSync('query.json', json);
+  var util = require("util");
+
+  var spawn = require("child_process").spawn;
+  var process = spawn('python',["./nlp/match_query.py"]);
+
 
 
 })
