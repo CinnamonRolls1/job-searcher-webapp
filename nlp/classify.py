@@ -12,10 +12,22 @@ class cluster:
         pass
 
     def build(self,df) :
+
+        #Imputation
+        from sklearn.impute import SimpleImputer
+        imp = SimpleImputer(missing_values=np.nan,strategy='mean')
+        #imp.fit(df)
+        #df = imp.transform(df)
+
         #TF-IDF Vectorization
         vectorizer = TfidfVectorizer(stop_words='english')
-        X = vectorizer.fit_transform(df['TITLE'].values.astype('U'))
-        X = np.append(X,vectorizer.fit_transform(df['DESCRIPTION'].values.astype('U')),axis=1)
+        X1 = vectorizer.fit_transform(df['TITLE'].values.astype('U')).toarray()
+        X2=vectorizer.fit_transform(df['DESCRIPTION'].values.astype('U')).toarray()
+        print(X1.shape,X2.shape,X1.dtype,X2.dtype)
+
+        X = np.append(X1,X2,axis=1)
+
+
 
         # #Label Encoding of output column
         # y = self.data_frame['IT'].values
@@ -42,9 +54,9 @@ class cluster:
 def main():
     df = pd.read_json("../scraper/scraper/indeed_data.json",orient='records')
     obj=cluster()
-    print(df)
+    #print(df[['SALARY','LOCATION']])
     #print(obj.data_frame)
-    #obj.build(df)
+    obj.build(df)
     #obj.kmeans()
 
 if __name__ == '__main__':
