@@ -1,5 +1,6 @@
 from glove_cluster import TextMatcher
 import pandas as pd
+import json
 
 Searcher = TextMatcher()
 Searcher.load('indeed_data.bin')
@@ -18,6 +19,10 @@ sentences = list(map(lambda x : x.lower(),sentences))
 sentences = list(map(lambda x: x.split(" "),sentences))
 
 sentences = Searcher.remove_stopwords(sentences)
-index=Searcher.get_results(['administrator','controller','project'],sentences)
+with open('../query.json', 'r') as f:
+    q = json.load(f)
+
+print(q)
+index=Searcher.get_results(q['role'].split(' '),sentences)
 
 pd.DataFrame(df.iloc[index]).T.to_json('../result.json')
