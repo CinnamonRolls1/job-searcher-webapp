@@ -1,12 +1,13 @@
 let mongoose = require('mongoose');
 
 let jobSchema = new mongoose.Schema({
-  title : {type: String, required :true},
-  company : {type: String, required:false},
-  location : {type: String, required:false},
-  salary : {type: Number, required: false},
-  age : {type: String, required:false}
-
-})
+  TITLE : {type: String, required :false},
+  COMPANY : {type: String, required:false},
+  LOCATION : {type: String, required:false},
+  SALARY : {type: Number, required: false},
+  DESCRIPTION : {type: String, required:false},
+  LINK : {type: String, required:false},
+  cluster : {type : Number, required: false},
+});
 
 let jobs = module.exports = mongoose.model('samples',jobSchema,'samples');
