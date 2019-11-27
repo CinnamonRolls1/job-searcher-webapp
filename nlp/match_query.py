@@ -25,4 +25,4 @@ with open('../query.json', 'r') as f:
 print(q)
 index=Searcher.get_results(q['role'].split(' '),sentences)
 
-pd.DataFrame(df.iloc[index]).T.to_json('../result.json')
+pd.DataFrame(df.iloc[index]).T.to_json('../result.json',orient='records');
