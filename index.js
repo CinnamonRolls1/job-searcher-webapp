@@ -47,6 +47,18 @@ app.post('/', function(req, res){
   console.log(role,location);
   res.redirect('/results');
 
+  //writing query to json
+  var obj = {
+    role: [role],
+    location: [location],
+    salary: [salary]
+  };
+
+  var json = JSON.stringify(obj);
+  var fs = require('fs');
+  fs.writeFile('query.json', json, 'utf8', callback);
+
+
 })
 
 
