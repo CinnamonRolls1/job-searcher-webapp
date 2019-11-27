@@ -6,6 +6,7 @@ html(lang='en', dir='ltr')
     link(href='https://fonts.googleapis.com/css?family=Quicksand&display=swap', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Inconsolata&display=swap', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Varela+Round&display=swap', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Baskervville&display=swap' rel='stylesheet')
     style.
       * {
       margin:0;
@@ -24,12 +25,7 @@ html(lang='en', dir='ltr')
       text-align:center;
       font-family: 'Quicksand', sans-serif;
       }
-      h2 {
-      font-family: 'Varela Round', sans-serif;
-      }
-      h3 {
-      font-family: 'Inconsolata', monospace;
-      }
+      
       .results {
       border-line:solid black 1px;
       margin-left:12.5%;
@@ -51,6 +47,7 @@ html(lang='en', dir='ltr')
       justify-content: space-around;
       display: fl
       position:absolute;
+      margin-bottom:5%;
       }
       ul.list {
       height: 20%;
@@ -82,9 +79,20 @@ html(lang='en', dir='ltr')
       }
       h2 {
       font-family: 'Varela Round', sans-serif;
+      font-weight:100;
+      margin-left:40%;
+      
       }
       h3 {
       font-family: 'Inconsolata', monospace;
+      margin-left:40%;
+      }
+      p {
+        font-family: 'Baskerville', serif;
+        font-weight:100;
+        margin-left:42%;
+        margin-top:0.5%;
+        font-size:1.4em;
       }
       .results {
         border-line:solid black 1px;
@@ -106,6 +114,9 @@ html(lang='en', dir='ltr')
       }
       a:hover {
         color: #FDEDEC;
+      }
+      .names {
+        margin-top:1.6%;
       }
     script.
       function display() {
@@ -130,14 +141,24 @@ html(lang='en', dir='ltr')
           a(href='/about') About
         li.men
           a(href='/team') Meet the Team
-    .results
-      h1 Jobs based on your search
-      h1 #{pos} #{loc}
-      each job, i in job_desc
-        .job
-          h2 #{job.title}
-          h3 #{"Description:"}
-          p #{job.desc}
+    .team
+      h1 Our Team
+      div.names
+        h2 Chinmayan pradeep
+        h3 Role:
+        p lorem Ipsum
+      div.names
+        h2 kains Praveen
+        h3 Role:
+        p asfafasfas
+      div.names
+        h2 Kishan Rakesh
+        h3 Role:
+        p asfvsfgkuhifuhwe;
+      div.names
+        h2 Safeer ahmed
+        h3 Role:
+        p ghdufygdslckcaiuh
           
           
 
