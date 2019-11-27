@@ -43,14 +43,41 @@ app.post('/', function(req, res){
   //get form data
   var role = req.body.role;
   var location = req.body.location;
+  var salary = req.body.salary;
   console.log(role,location);
   res.redirect('/results');
 
 })
 
 
-
 app.get('/results', function(req,res) {
+  var jobs = [
+    { title : 'Software engineer', desc : 'random', salary : 10000},
+       { title : 'Back end', desc : 'random', salary : 10000},
+       { title : 'Cloud Reliabilty', desc : 'random', salary : 10000},
+       { title : 'Compiler Research', desc : 'random', salary : 10000},
+       { title : 'Full Stack', desc : 'random', salary : 10000},
+       { title : 'Content Creator', desc : 'random', salary : 10000},
+       { title : 'Server Technology', desc : 'random', salary : 10000},
+       { title : 'Manager', desc : 'random', salary : 10000},
+       { title : 'Project Head', desc : 'random', salary : 10000}
+  ]
+  res.render('results', {job_desc: jobs});
+});
+
+app.get('/sponsered', function(req,res) {
+  res.render('sponsered');
+});
+app.get('/about', function(req, res) {
+  res.render('about');
+});
+app.get('/team', function(req, res) {
+  res.render('team');
+});
+
+
+
+/*app.get('/results', function(req,res) {
   // var jobs =  [
   //   { title : 'Software engineer', desc : 'random', salary : 10000},
   //   { title : 'Back end', desc : 'random', salary : 10000},
@@ -69,7 +96,7 @@ app.get('/results', function(req,res) {
   })
 
 
-});
+});*/
 
 //Start Server
 const PORT= 3000;

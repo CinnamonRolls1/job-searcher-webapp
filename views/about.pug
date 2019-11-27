@@ -6,6 +6,7 @@ html(lang='en', dir='ltr')
     link(href='https://fonts.googleapis.com/css?family=Quicksand&display=swap', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Inconsolata&display=swap', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Varela+Round&display=swap', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Baskervville&display=swap' rel='stylesheet')
     style.
       * {
       margin:0;
@@ -19,16 +20,11 @@ html(lang='en', dir='ltr')
       }
       h1 {
       margin-top:10px;
+      
       font-size:2.4em;
       color:#1B4F72;
       text-align:center;
       font-family: 'Quicksand', sans-serif;
-      }
-      h2 {
-      font-family: 'Varela Round', sans-serif;
-      }
-      h3 {
-      font-family: 'Inconsolata', monospace;
       }
       .results {
       border-line:solid black 1px;
@@ -51,6 +47,7 @@ html(lang='en', dir='ltr')
       justify-content: space-around;
       display: fl
       position:absolute;
+      margin-bottom:5%;
       }
       ul.list {
       height: 20%;
@@ -67,9 +64,7 @@ html(lang='en', dir='ltr')
       }
       .list li:hover {
       }
-      p {
-      line-height:25px;
-      }
+      
       body {
       background-color:#FDF2E9;
       }
@@ -81,10 +76,25 @@ html(lang='en', dir='ltr')
       font-family: 'Quicksand', sans-serif;
       }
       h2 {
-      font-family: 'Varela Round', sans-serif;
+      font-family: 'Baskervville', serif;
+      margin-left:25%;
+      margin-right:25%;
+      margin-top:3%;
+      font-weight:100;
       }
       h3 {
       font-family: 'Inconsolata', monospace;
+      font-size:1.6em;
+      font-weight:100;
+      margin-left:25%;
+      margin-top:2%;
+      }
+      p {
+        font-family: 'Baskerville', serif;
+        font-size:1.4em;
+        font-weight:100;
+        margin-left:30%;
+        margin-top:0.5%;
       }
       .results {
         border-line:solid black 1px;
@@ -130,14 +140,18 @@ html(lang='en', dir='ltr')
           a(href='/about') About
         li.men
           a(href='/team') Meet the Team
-    .results
-      h1 Jobs based on your search
-      h1 #{pos} #{loc}
-      each job, i in job_desc
-        .job
-          h2 #{job.title}
-          h3 #{"Description:"}
-          p #{job.desc}
+    h1 The job searcher for 'The Jobless'
+    h2 Job Searcher is a general purpose, AI based web crawler and searcher which uses Natural Language
+      |Processing for classifying the unordered data from the World Wide Web.
+    h3 Methodology:
+    p Tf-idf vectorizer
+    p Kmeans clustering
+    p Glove
+    h3 APIs used:
+    p ExpressJS
+    p mongoose
+    p PUG(Jade)
+    
           
           
 

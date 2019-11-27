@@ -29,7 +29,7 @@ html(lang='en', dir='ltr')
       background-color:#B2F8F1;
       }
       .form {
-      margin-top:10%;;
+      margin-top:5%;;
       text-align:center;
       width:100%;
       }
@@ -55,8 +55,13 @@ html(lang='en', dir='ltr')
       height:18px;
       width:25%;
       }
+      .salary {
+        height:18px;
+        width:25%;
+      }
       .search-buttn {
       height:40px;
+      margin-top:3%;
       width:15%;
       background:#2E86C1;
       font-size:20px;
@@ -83,6 +88,7 @@ html(lang='en', dir='ltr')
       justify-content: space-around;
       display: fl
       position:absolute;
+      margin-bottom:5%;
       }
       ul {
       height: 20%;
@@ -98,15 +104,27 @@ html(lang='en', dir='ltr')
       font-size: 1.6em;
       }
       .list li:hover {
-      background-color: #FDEDEC;
+      color: #FDEDEC;
+      }
+      a {
+        text-decoration:none;
+        font-family:'Quicksand', sans-serif;
+        color:#0B5345;
+      }
+      a:hover {
+        color: #FDEDEC;
       }
   body
     .menu
       ul.list
-        li Home
-        li Sponsered
-        li About
-        li Meet the Team
+        li
+          a(href='/') Home
+        li
+          a(href='/sponsered') Sponsered
+        li
+          a(href='/about') About
+        li
+          a(href='/team') Meet the Team
     h1 Job searcher
     p#cap a new way...
     form.form(action='/', method='POST')
@@ -118,4 +136,5 @@ html(lang='en', dir='ltr')
       .box
         input.field.position(type='text', placeholder='role', name='role')
         input.field.location(type='text', placeholder='location',name='location')
+        input.field.salary(type='text', placeholder='Expected salary', name='salary')
         button.search-buttn(type='submit', name='search') Search
