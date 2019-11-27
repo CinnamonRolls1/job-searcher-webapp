@@ -64,6 +64,7 @@ app.post('/', function(req, res){
   var json = JSON.stringify(obj);
   fs.writeFileSync('query.json', json);
   var util = require("util");
+  console.log("jnnnfjf ");
 
   var spawn = require("child_process").spawn;
   var process = spawn('python',["./nlp/match_query.py"]);
