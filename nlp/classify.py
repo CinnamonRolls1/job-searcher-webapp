@@ -6,6 +6,7 @@ from copy import deepcopy
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
 
 class cluster:
     def __init__(self):
@@ -39,8 +40,18 @@ class cluster:
 
         #train cluster model
         model = KMeans(n_clusters=2, init='k-means++', max_iter=100000, n_init=1)
+        print('fitting...')
         model.fit(X)
+        print('predicting...')
         y_predict = model.predict(X)
+
+        print(y_predict)
+
+        X = np.append(X,y_predict.reshape(-1,1),axis=1)
+        df = pd.concat([df,pd.DataFrame({"cluster":y_predict})],axis=1)
+        print(df)
+        df.to_json('../output_indeed.json',orient='records')
+
 
         # #results
         # acc_train = accuracy_score(y_train,y_train_predict)
