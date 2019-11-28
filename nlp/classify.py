@@ -47,18 +47,17 @@ class cluster:
 
         #print(y_predict)
 
-        '''Sum_of_squared_distances = []
-		K = range(1,11)
-		for k in K:
-		    km = KMeans(n_clusters=k)
-		    km = km.fit(X)
-		    Sum_of_squared_distances.append(km.inertia_)
+		Sum_of_squared_distances = []
+		for k in range(1,11,1):
+			km = KMeans(n_clusters=k)
+			km = km.fit(X)
+			Sum_of_squared_distances.append(km.inertia_)
 
 		plt.plot(K, Sum_of_squared_distances, 'bx-')
 		plt.xlabel('k')
 		plt.ylabel('Sum_of_squared_distances')
 		plt.title('Elbow Method For Optimal k')
-		plt.show()'''
+		plt.show()
 
         X = np.append(X,y_predict.reshape(-1,1),axis=1)
         df = pd.concat([df,pd.DataFrame({"cluster":y_predict})],axis=1)
