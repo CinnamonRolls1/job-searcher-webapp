@@ -45,17 +45,17 @@ app.post('/', function(req, res){
   var location = req.body.location;
   var salary = req.body.salary;
   console.log(role,location);
-  res.redirect('/results');
-  
+
+
   //writing query to json
-  
+
   // var obj = {
     //   role: role,
     //   location: location,
     //   salary: salary
     // };
   var fs = require('fs');
-    
+
   let rawdata = fs.readFileSync('query.json');
   let obj = JSON.parse(rawdata);
   obj.role=role;
@@ -67,9 +67,9 @@ app.post('/', function(req, res){
   console.log("jnnnfjf ");
 
   var spawn = require("child_process").spawn;
-  var process = spawn('python',["./nlp/match_query.py"]);
+  var process = spawn('python3',["match_query.py"]);
 
-
+  res.redirect('/results');
 
 })
 
@@ -120,8 +120,8 @@ app.get('/results', function(req,res) {
   var fs = require('fs');
   let data = fs.readFileSync("result.json");
   let obj = JSON.parse(data);
-  console.log(obj)
-  res.render('results',{job_desc : [obj]});
+  console.log(obj.jobs);
+  res.render('results',{job_desc : obj});
   // });
 
 

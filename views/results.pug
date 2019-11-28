@@ -120,7 +120,7 @@ html(lang='en', dir='ltr')
       
       
   body
-    .menu
+    .menu3
       ul.list
         li.men
           a(href='/') Home
@@ -133,13 +133,12 @@ html(lang='en', dir='ltr')
     .results
       h1 Jobs based on your search
       h1 #{pos} #{loc}
-      each job, i in job_desc
-        .job
-          h2 #{job.TITLE.value}
-          h2 #{job.COMPANY.value}
-          h3 #{"Description:"}
-          p #{job.desc}
-          a(href=job.LINK.value) Link
+      .job
+        h2 #{job_desc.TITLE}
+        h2 #{job_desc.COMPANY}
+        h3 #{"Description:"}
+        p #{job_desc.SALARY}
+        a(href=job_desc.LINK) Link
           
           
           
